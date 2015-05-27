@@ -34,6 +34,10 @@ task :install do
       link_file(file)
     end
   end
+
+  # puts 'Linking Sublime files'
+  # system %Q{rm -rf ~/Library/Application\ Support/Sublime\ Text/User}
+  # system %Q{ln -s ~/.dotfiles/Users ~/Library/Application\ Support/Sublime\ Text/User}
 end
 
 def replace_file(file)
