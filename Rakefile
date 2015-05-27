@@ -81,7 +81,7 @@ def install_oh_my_zsh
     case $stdin.gets.chomp
     when 'y'
       puts "installing oh-my-zsh"
-      system %Q{git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"}
+      system %Q{curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh}
     when 'q'
       exit
     else
