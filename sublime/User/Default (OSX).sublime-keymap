@@ -7,6 +7,11 @@
 	{ "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
 	{ "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
 	{ "keys": ["ctrl+shift+<"], "command": "erb" }
+  // Origami
+  { "keys": ["super+k","super+alt+w"], "command": "destroy_pane", "args": {"direction": "self"} },
+  // RubyBLockConverter
+  { "keys": ["super+alt+j"], "command": "brace_to_do_end" },
+  { "keys": ["super+alt+k"], "command": "do_end_to_brace" },
   // Aligntab
   {
     "keys": ["super+shift+i"], "command": "align_tab",
