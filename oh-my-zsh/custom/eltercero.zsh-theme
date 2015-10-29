@@ -20,7 +20,7 @@ function put_spacing() {
 
   local spacing=""
   for i in {1..$termwidth}; do
-    spacing="${spacing} " 
+    spacing="${spacing} "
   done
   echo $spacing
 }
