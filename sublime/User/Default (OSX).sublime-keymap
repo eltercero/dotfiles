@@ -1,18 +1,21 @@
 [
   { "keys": ["ctrl+alt+super+d"], "command": "toggle_side_bar" },
-	{ "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
-	{ "keys": ["super+shift+l"], "command": "expand_selection", "args": {"to": "line"} },
-	{ "keys": ["ctrl+shift+."], "command": "erb" },
-	{ "keys": ["ctrl+super+r"], "command": "reveal_in_side_bar" },
-	{ "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
-	{ "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
-	{ "keys": ["ctrl+shift+<"], "command": "erb" }
-  // Origami
-  { "keys": ["super+k","super+alt+w"], "command": "destroy_pane", "args": {"direction": "self"} },
+  { "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+  { "keys": ["super+shift+l"], "command": "expand_selection", "args": {"to": "line"} },
+  { "keys": ["ctrl+super+r"], "command": "reveal_in_side_bar" },
+  { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
+  { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
+  { "keys": ["ctrl+shift+<"], "command": "erb" },
+  { "keys": ["super+shift+t"], "command": "reopen_last_file" },
+  { "keys": ["super+i"], "command": "copy_path" },
+  { "keys": ["super+ctrl+o"], "command": "goto_definition" },
+  { "keys": ["ctrl+b"], "command": "show_panel", "args":  {"panel": "console", "toggle": true} },
+  // SublimeERB
+  { "keys": ["ctrl+shift+."], "command": "erb" },
   // RubyBLockConverter
-  { "keys": ["super+alt+j"], "command": "brace_to_do_end" },
-  { "keys": ["super+alt+k"], "command": "do_end_to_brace" },
-  // Aligntab
+  { "keys": ["super+alt+j"], "command": "do_end_to_brace" },
+  { "keys": ["super+alt+k"], "command": "brace_to_do_end" },
+  // AlignTab
   {
     "keys": ["super+shift+i"], "command": "align_tab",
     "args" : {"live_preview" : true}
