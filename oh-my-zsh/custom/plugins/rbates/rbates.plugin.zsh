@@ -6,6 +6,11 @@ h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
 
+rails_migrate_down() {
+  version=$(ls db/migrate | fzf | awk -F _ '{print $1}')
+  [[ -n "$version" ]] && rails db:migrate:down VERSION="$version"
+}
+
 # autocorrect is more annoying than helpful
 unsetopt correct_all
 
