@@ -5,6 +5,14 @@
 	co = checkout
 	sw = switch
 	rt = restore	
+  diverged-diff = "!f() { git diff origin/master...HEAD $@ ;}; f"
+  diverged-stat = "!f() { git diff origin/master...HEAD --stat $@; }; f"
+  diverged-log = "!f() { git log `git merge-base HEAD origin/master`..HEAD $@ ;}; f"
+  diverged-logstat = "!f() { git log --stat `git merge-base HEAD origin/master`..HEAD $@ ;}; f"
+  diverged-llog = "!f() { git log `git merge-base HEAD origin/master`..HEAD $@ ;}; f"
+  diverged-commit = merge-base HEAD origin/master
+  # Inicia un rebase interactivo desde el momento en que la rama divergió de master
+  rrrebase = "!bash -xc \"git rebase -i  `git merge-base HEAD origin/master`\""
 [color]
 	diff = auto
 	status = auto
