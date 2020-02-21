@@ -3,12 +3,16 @@ require 'erb'
 
 desc "install the dot files into user's home directory"
 task :install do
+  install_brew
   install_oh_my_zsh
   switch_to_zsh
+  move_files
+end
+
+def move_files
   replace_all = false
   files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh]
   files << "oh-my-zsh/custom/plugins/rbates"
-  files << "oh-my-zsh/custom/rbates.zsh-theme"
   files << "oh-my-zsh/custom/eltercero.zsh-theme"
   files << "oh-my-zsh/custom/custompanda.zsh-theme"
   files.each do |file|
@@ -36,10 +40,6 @@ task :install do
       link_file(file)
     end
   end
-
-  # puts 'Linking Sublime files'
-  # system %Q{rm -rf ~/Library/Application\ Support/Sublime\ Text/User}
-  # system %Q{ln -s ~/.dotfiles/Users ~/Library/Application\ Support/Sublime\ Text/User}
 end
 
 def replace_file(file)
@@ -94,4 +94,13 @@ def install_oh_my_zsh
       puts "skipping oh-my-zsh, you will need to change ~/.zshrc"
     end
   end
+end
+
+def install_brew
+  if !File.exists?("/usr/local/bin/brew")
+    system("ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"")
+  end
+
+  formulas = %w(rbenv bat fzf)
+  system("brew install #{formulas.join(' ')}")
 end
