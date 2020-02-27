@@ -13,6 +13,7 @@
   diverged-commit = merge-base HEAD origin/master
   # Inicia un rebase interactivo desde el momento en que la rama divergió de master
   rrrebase = "!bash -xc \"git rebase -i  `git merge-base HEAD origin/master`\""
+  plog = "log --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(blue)<%an>%Creset' --abbrev-commit"
 [color]
 	diff = auto
 	status = auto
